@@ -17,10 +17,10 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
 
-  #TAGggf
+  #TAG
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
-  # CONFIG SERVICE f
+  # CONFIG SERVICE
   - export CONFIG=sqshq/piggymetrics-config
   - docker build -t $CONFIG:$COMMIT ./config
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
