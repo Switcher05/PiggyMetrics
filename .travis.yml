@@ -20,7 +20,7 @@ after_success:
   #TAGggf
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
-  # CONFIG SERVICE
+  # CONFIG SERVICE f
   - export CONFIG=sqshq/piggymetrics-config
   - docker build -t $CONFIG:$COMMIT ./config
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
